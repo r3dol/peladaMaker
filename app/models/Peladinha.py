@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
-from sqlalchemy.orm import relationship, declarative_base
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
@@ -14,7 +14,9 @@ class Peladinha(Base):
     max_capacity = Column(Integer, nullable=False)
     location_id = Column(String, ForeignKey("location.id"), nullable=False)
 
-    jogadores = relationship(argument="Peladinha_Team_Player", back_populates="Peladinha")
+    players = relationship(
+        argument="Peladinha_Team_Player", back_populates="Peladinha"
+    )
 
     def __repr__(self):
         return (

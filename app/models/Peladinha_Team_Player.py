@@ -1,10 +1,22 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, Float
-from sqlalchemy.orm import relationship, declarative_base
+from sqlalchemy import Column, Float, ForeignKey, Integer, String
+from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
-
 class Peladinha_Team_Player(Base):
+    """
+    Represents a player in a Peladinha team.
+
+    Attributes:
+        id (int): Primary key.
+        player_id (int): Foreign key referencing the player.
+        peladinha_id (int): Foreign key referencing the peladinha.
+        team_id (int): Foreign key referencing the team.
+        position (str): The position of the player in the team.
+        rating (float): The rating of the player.
+        goals_scored (int): The number of goals scored by the player.
+    """
+
     __tablename__ = "peladinha_team_player"
 
     id = Column(Integer, primary_key=True)

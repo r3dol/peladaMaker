@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Date, Table
-from sqlalchemy.orm import relationship, declarative_base, sessionmaker
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
@@ -11,4 +11,4 @@ class Team(Base):
     team_name = Column(String, nullable=False)
     team_size = Column(Integer, nullable=False)
 
-    jogadores = relationship("Peladinha_Team_Player", back_populates="Team")
+    players = relationship("Peladinha_Team_Player", back_populates="Team")
