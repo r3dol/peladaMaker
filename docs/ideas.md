@@ -1,12 +1,19 @@
-- [29/07/2024, 15:13:53] Eduardo Silva: Sim
-[29/07/2024, 15:13:59] Eduardo Silva: Vou mandar para aqui ideias soltas
-[29/07/2024, 15:14:21] Eduardo Silva: Criar contas de utilizadores
-[29/07/2024, 15:14:34] Eduardo Silva: Criar o evento(peladinha)
-[29/07/2024, 15:14:42] Eduardo Silva: Votar em ir ou não ir
-[29/07/2024, 15:14:50] Eduardo Silva: Receber notificação quando peladinha é criada
-[29/07/2024, 15:15:00] Eduardo Silva: Receber notificação no dia antes da peladinha
-[29/07/2024, 15:15:09] Eduardo Silva: Escolher campo
-[29/07/2024, 15:15:14] Eduardo Silva: Fazer as equipas
-[29/07/2024, 15:15:36] Eduardo Silva: (Random ou baseado tipo em rating, para ser justo)
-[29/07/2024, 15:15:57] Eduardo Silva: (Apontar o resultado e os marcadores para escolher melhor as equipas na peladinha seguinte)
-Podermos votar nos jogadores e nos seus performances
+- [29/07/2024, 15:14:21] Eduardo Silva: Criar contas de utilizadores
+- 
+- [29/07/2024, 15:14:34] Eduardo Silva: Criar o evento(peladinha)
+- 
+- [29/07/2024, 15:14:42] Eduardo Silva: Votar em ir ou não ir
+- 
+- [29/07/2024, 15:14:50] Eduardo Silva: Receber notificação quando peladinha é criada
+- 
+- [29/07/2024, 15:15:00] Eduardo Silva: Receber notificação no dia antes da peladinha
+- 
+- [29/07/2024, 15:15:09] Eduardo Silva: Escolher campo
+- 
+- [29/07/2024, 15:15:14] Eduardo Silva: Fazer as equipas
+- 
+- [29/07/2024, 15:15:36] Eduardo Silva: (Random ou baseado tipo em rating, para ser justo)
+- 
+- [29/07/2024, 15:15:57] Eduardo Silva: (Apontar o resultado e os marcadores para escolher melhor as equipas na peladinha seguinte)
+- 
+- Podermos votar nos jogadores e nos seus performances
