@@ -14,8 +14,8 @@ class Peladinha(Base):
     max_capacity = Column(Integer, nullable=False)
     location_id = Column(String, ForeignKey("location.id"), nullable=False)
 
-    players = relationship(
-        argument="Peladinha_Team_Player", back_populates="Peladinha"
+    teams = relationship(
+        argument="Peladinha_Team_Player", back_populates="peladinha"
     )
 
     def __repr__(self):

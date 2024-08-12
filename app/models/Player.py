@@ -12,4 +12,4 @@ class Player(Base):
     rating = Column(Float, nullable=False)
     photo = Column(String, nullable=False)
 
-    peladinhas = relationship("Peladinha_Team_Player", back_populates="Player")
+    teams = relationship("Peladinha_Team_Player", back_populates="player")

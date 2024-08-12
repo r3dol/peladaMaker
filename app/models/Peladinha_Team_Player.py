@@ -27,6 +27,6 @@ class Peladinha_Team_Player(Base):
     rating = Column(Float, nullable=True)
     goals_scored = Column(Integer, nullable=True)
 
-    peladinha = relationship("Peladinha", back_populates="players")
+    peladinha = relationship("Peladinha", back_populates="teams")
     team = relationship("Team", back_populates="players")
-    player = relationship("Player", back_populates="peladinhas")
+    player = relationship("Player", back_populates="teams")

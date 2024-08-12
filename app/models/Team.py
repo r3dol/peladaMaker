@@ -11,4 +11,4 @@ class Team(Base):
     team_name = Column(String, nullable=False)
     team_size = Column(Integer, nullable=False)
 
-    players = relationship("Peladinha_Team_Player", back_populates="Team")
+    players = relationship("Peladinha_Team_Player", back_populates="team")
