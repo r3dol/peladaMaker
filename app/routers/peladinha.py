@@ -16,7 +16,7 @@ router = APIRouter()
     "/", response_model=Optional[PeladinhaInDB], status_code=status.HTTP_201_CREATED
 )
 def create_training_plan(
-    training_plan_create: PeladinhaCreate,
+    peladinha_create: PeladinhaCreate,
     db: Session = Depends(get_db),
     #user: User = Depends(get_current_active_user),
 ):
@@ -37,13 +37,13 @@ def create_training_plan(
         HTTPException: If there is an error creating the peladinha.
     """
     peladinha = peladinha_crud.get_one(
-        db, Peladinha.name == training_plan_create.name#, owner_id=user.id
+        db, Peladinha.name == peladinha_create.name#, owner_id=user.id
     )
     if peladinha is not None:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
-            detail=f"Training plan with name {training_plan_create.name} already exists",
+            detail=f"Training plan with name {peladinha_create.name} already exists",
         )
     return peladinha_crud.create(
-        db, obj_create=training_plan_create#, owner_id=user.id
+        db, obj_create=peladinha_create#, owner_id=user.id
     )
