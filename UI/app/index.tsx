@@ -30,31 +30,27 @@ const App = () => {
                 <Text className="text-center text-white text-regular text-2xl mt-3"> 
                   Organiza as tuas peladinhas 
                 </Text>
-                <Pressable className="absolute top-0 right-0" onPress={() => router.push("/create-peladinha")}>
+                <Pressable className="absolute top-0 right-0" onPress={() => router.push("/profile")}>
                   <Image className="absolute top-0 right-0 w-10 h-10 rounded-full" source={beachImage} alt="Rounded avatar"/>
                 </Pressable>
               </View>
 
               <View>
 
-                <CustomButton 
+                <CustomButton
+                containerStyles='mt-2'
+                // textStyles='text-green-300'
                 onPress={() => router.push("ListOpenPeladinhas")} 
                 title='Show open peladinhas'/>
-                <CustomButton 
+                <CustomButton containerStyles='mt-2'
                 onPress={() => router.push("ListClosedPeladinhas")} 
                 title='Show Closed peladinhas'/>
-                <CustomButton 
-                onPress={() => router.push("/list-open-peladinhas")} 
+                <CustomButton containerStyles='mt-2'
+                onPress={() => router.push("/ListFinishedPeladinhas")} 
                 title='History of peladinhas'/>
-                <CustomButton 
+                <CustomButton containerStyles='mt-2'
                 onPress={() => router.push("/create-peladinha")} 
                 title='Create your own peladinha'/>
-                <CustomButton 
-                onPress={() => router.push("/list-open-peladinhas")} 
-                title='Check Statistics'/>
-                <CustomButton 
-                onPress={() => router.push("/list-open-peladinhas")} 
-                title='My Profile'/>
               </View>
 
               <StatusBar style="light" />

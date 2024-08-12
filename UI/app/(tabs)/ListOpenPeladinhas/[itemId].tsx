@@ -50,40 +50,38 @@ const AffirmationPractice = () => {
 
     return (
         <View className="flex-1">
-            <ImageBackground
-                source={affirmation?.image}
-                resizeMode="cover"
-                className="flex-1"
-            >
+
                 
-                    <Pressable
-                        onPress={() => router.back()}
-                        className="absolute top-16 left-6 z-10"
-                    >
-                        <AntDesign name="leftcircleo" size={50} color="white" />
-                    </Pressable>
+            <Pressable
+                onPress={() => router.back()}
+                className="absolute top-16 left-6 z-10"
+            >
+                <AntDesign name="leftcircleo" size={30} color="white" />
+            </Pressable>
 
-                    <ScrollView
-                        className="mt-20"
-                        showsVerticalScrollIndicator={false}
-                    >
-                        <View className="h-full border-white justify-center">
-                            <View className="h-4/5 justify-center">
-                                {sentences.map((sentence, idx) => (
-                                    // <Text
-                                    //     className="text-white text-3xl mb-12 font-bold text-center"
-                                    //     key={idx}
-                                    // >
-                                    //     {sentence}.
-                                    // </Text>
-                                    <OpenPeladinhaTemplate size="5v5"  date="1/1/2002" createdBy="Reis" >
+            <ScrollView
+                className="mt-20"
+                showsVerticalScrollIndicator={false}
+            >
+                <View className="h-full border-white justify-center">
+                    {/* <View className="h-4/5 justify-center">
+                            {sentences.map((sentence, idx) => (
+                            // <Text
+                            //     className="text-white text-3xl mb-12 font-bold text-center"
+                            //     key={idx}
+                            // >
+                            //     {sentence}.
+                            // </Text>
+                            
+                        ))} 
 
-                                    </OpenPeladinhaTemplate>
-                                ))}
-                            </View>
-                        </View>
-                    </ScrollView>
-            </ImageBackground>
+                        
+                    </View> */}
+                    <OpenPeladinhaTemplate size="5v5"  date="1/1/2002" createdBy="Reis" >
+
+                    </OpenPeladinhaTemplate>
+                </View>
+            </ScrollView>
         </View>
     );
 };
