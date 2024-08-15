@@ -8,3 +8,26 @@ services:
         - 8000:8000
       volumes:
         - .:/app
+    db:
+      container_name: db
+      image: postgres:16-alpine
+      ports:
+        - '5432:5432'
+      volumes:
+        - db:/var/lib/postgresql/data
+      env_file:
+        - .env.local
+    test-db:
+      container_name: test-db
+      image: postgres:16-alpine
+      ports:
+        - '5433:5432'
+      volumes:
+        - test-db:/var/lib/postgresql/data
+      env_file:
+        - .env.local
+volumes:
+  db:
+    driver: local
+  test-db:
+    driver: local

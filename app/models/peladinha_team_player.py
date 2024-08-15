@@ -3,7 +3,8 @@ from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
-class Peladinha_Team_Player(Base):
+
+class peladinha_team_player(Base):
     """
     Represents a player in a Peladinha team.
 
@@ -27,6 +28,6 @@ class Peladinha_Team_Player(Base):
     rating = Column(Float, nullable=True)
     goals_scored = Column(Integer, nullable=True)
 
-    peladinha = relationship("Peladinha", back_populates="players")
-    team = relationship("Team", back_populates="players")
-    player = relationship("Player", back_populates="peladinhas")
+    peladinha = relationship("peladinha", back_populates="players")
+    team = relationship("team", back_populates="players")
+    player = relationship("player", back_populates="peladinhas")
