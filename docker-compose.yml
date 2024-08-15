@@ -3,7 +3,7 @@ services:
       build: .
       command: sh -c "uvicorn app.main:app --reload --port=8000 --host=0.0.0.0"
       env_file:
-        - app/env
+        - .env.dev
       ports:
         - 8000:8000
       volumes:
@@ -16,7 +16,7 @@ services:
       volumes:
         - db:/var/lib/postgresql/data
       env_file:
-        - .env.local
+        - .env.dev
     test-db:
       container_name: test-db
       image: postgres:16-alpine
@@ -25,7 +25,7 @@ services:
       volumes:
         - test-db:/var/lib/postgresql/data
       env_file:
-        - .env.local
+        - .env.test
 volumes:
   db:
     driver: local
