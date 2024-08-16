@@ -1,33 +1,25 @@
 services:
     backend:
+      container_name: backend
       build: .
-      command: sh -c "uvicorn app.main:app --reload --port=8000 --host=0.0.0.0"
       env_file:
-        - .env.dev
+        - .env.local
       ports:
         - 8000:8000
+      depends_on:
+        - db
       volumes:
         - .:/app
     db:
       container_name: db
       image: postgres:16-alpine
       ports:
-        - '5432:5432'
+        - "5432:5432"
       volumes:
         - db:/var/lib/postgresql/data
       env_file:
-        - .env.dev
-    test-db:
-      container_name: test-db
-      image: postgres:16-alpine
-      ports:
-        - '5433:5432'
-      volumes:
-        - test-db:/var/lib/postgresql/data
-      env_file:
-        - .env.test
+        - .env.local
+      restart: always
 volumes:
   db:
-    driver: local
-  test-db:
     driver: local

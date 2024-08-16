@@ -1,15 +1,17 @@
-from fastapi import Depends, FastAPI
+from fastapi import FastAPI
 
-from app.dependencies import get_query_token, get_token_header
-from app.routers import users, peladinha, peladinha_team_player, player, users
+from app.routers import users, peladinha, peladinha_team_player, player
 
 app = FastAPI(title="PeladaMaker API", version="0.0.0")
 
-app.include_router(users.router)
-app.include_router(peladinha.router)
-app.include_router(peladinha_team_player.router)
+app.include_router(users.router, prefix="/users", tags=["users"])
+app.include_router(peladinha.router, prefix="/peladinha", tags=["peladinha"])
+app.include_router(
+    peladinha_team_player.router, prefix="/peladinha_team_player", tags=["peladinha"]
+)
+app.include_router(player.router, prefix="/player", tags=["player"])
+# app.include_router(auth_router, prefix="/auth", tags=["auth"])
 
-app.include_router(player.router)
 
 @app.get("/")
 async def root():

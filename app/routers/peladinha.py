@@ -1,13 +1,13 @@
-
-from typing import List, Optional
+from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.crud.peladinha import peladinha_crud
-from app.models.Peladinha import Peladinha
+from app.models.peladinha import Peladinha
 from app.schemas.peladinha import PeladinhaInDB, PeladinhaCreate
 
+from app.database.db import get_db
 
 router = APIRouter()
 
@@ -18,7 +18,7 @@ router = APIRouter()
 def create_training_plan(
     peladinha_create: PeladinhaCreate,
     db: Session = Depends(get_db),
-    #user: User = Depends(get_current_active_user),
+    # user: User = Depends(get_current_active_user),
 ):
     """
     Create a new training plan with the specified data.
@@ -37,13 +37,11 @@ def create_training_plan(
         HTTPException: If there is an error creating the peladinha.
     """
     peladinha = peladinha_crud.get_one(
-        db, Peladinha.name == peladinha_create.name#, owner_id=user.id
+        db, Peladinha.name == peladinha_create.name  # , owner_id=user.id
     )
     if peladinha is not None:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail=f"Training plan with name {peladinha_create.name} already exists",
         )
-    return peladinha_crud.create(
-        db, obj_create=peladinha_create#, owner_id=user.id
-    )
+    return peladinha_crud.create(db, obj_create=peladinha_create)  # , owner_id=user.id

@@ -3,9 +3,8 @@ from typing import List
 from sqlalchemy.orm import Session
 
 from app.crud.base import CRUDRepository
-from app.models.Peladinha import Peladinha
-from app.models.Peladinha_Team_Player import Peladinha_Team_Player
-from app.models.Player import Player
+from app.models.peladinha_team_player import Peladinha_Team_Player
+from app.models.player import Player
 
 
 class Peladinha_Team_PlayerCRUD(CRUDRepository):
@@ -22,4 +21,5 @@ class Peladinha_Team_PlayerCRUD(CRUDRepository):
         """
         return peladinha_team_player.players
 
-peladinha_team_player_crud = Peladinha_Team_Player(model=Peladinha_Team_Player)
+
+peladinha_team_player_crud = Peladinha_Team_PlayerCRUD(model=Peladinha_Team_Player)

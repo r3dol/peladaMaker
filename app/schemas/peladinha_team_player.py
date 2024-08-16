@@ -24,9 +24,10 @@ class Peladinha_Team_PlayerUpdate(Peladinha_Team_PlayerBase):
 
 class Peladinha_Team_PlayerInDB(Peladinha_Team_PlayerBase):
     id: int
-   # location_id: int
+
+# location_id: int
 
 
 class Peladinha_Team_PlayerOut(Peladinha_Team_PlayerBase):
     id: int
-    #location_id: int
+    # location_id: int

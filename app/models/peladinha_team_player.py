@@ -3,6 +3,7 @@ from sqlalchemy.orm import declarative_base, relationship
 
 Base = declarative_base()
 
+
 class Peladinha_Team_Player(Base):
     """
     Represents a player in a Peladinha team.

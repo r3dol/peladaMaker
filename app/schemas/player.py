@@ -1,13 +1,10 @@
-import datetime
-from typing import List, Optional
-
 from pydantic import BaseModel
 
 
 class PlayerBase(BaseModel):
     name: str
-    rating: float
-    #photo
+    rating: float | None = 0.0
+    # photo: str
 
 
 class PlayerCreate(PlayerBase):
@@ -15,7 +12,8 @@ class PlayerCreate(PlayerBase):
 
 
 class PlayerUpdate(PlayerBase):
-    pass
+    name: str | None = None
+    rating: float | None
 
 
 class PlayerInDB(PlayerBase):
@@ -24,3 +22,5 @@ class PlayerInDB(PlayerBase):
 
 class PlayerOut(PlayerBase):
     id: int
+    name: str
+    rating: float | None

@@ -9,7 +9,7 @@ class PeladinhaBase(BaseModel):
     time: datetime.datetime
     description: Optional[str] = None
     max_capacity: int
-    #location_id:int
+    # location_id:int
 
 
 class PeladinhaCreate(PeladinhaBase):
@@ -22,9 +22,11 @@ class PeladinhaUpdate(PeladinhaBase):
 
 class PeladinhaInDB(PeladinhaBase):
     id: int
-   # location_id: int
+
+
+# location_id: int
 
 
 class PeladinhaOut(PeladinhaBase):
     id: int
-    #location_id: int
+    # location_id: int

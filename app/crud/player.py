@@ -3,14 +3,11 @@ from typing import List
 from sqlalchemy.orm import Session
 
 from app.crud.base import CRUDRepository
-from app.models.Peladinha import Peladinha
-from app.models.Player import Player
+from app.models.player import Player
 
 
 class PlayerCRUD(CRUDRepository):
-    def get_name_in_peladinha(
-        self, player: Player
-    ) -> str:
+    def get_name_in_peladinha(self, player: Player) -> str:
         """Returns the name of player.
 
         Parameters:
@@ -21,4 +18,5 @@ class PlayerCRUD(CRUDRepository):
         """
         return player.name
 
-player_crud = PlayerCRUD(model=Peladinha)
+
+player_crud = PlayerCRUD(model=Player)

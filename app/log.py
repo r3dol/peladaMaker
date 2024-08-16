@@ -10,7 +10,7 @@ DebugLevelType = str
 
 
 def get_logger(
-        name: str | None = None, level: DebugLevelType = "DEBUG"
+    name: str | None = None, level: DebugLevelType = "DEBUG"
 ) -> logging.Logger:
     """
     Creates and configures a logger for logging messages.

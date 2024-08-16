@@ -4,7 +4,7 @@ from app.config import settings
 
 if __name__ == "__main__":  # pragma: no cover
     uvicorn.run(
-        "peladaMaker.main:app",
+        "app.main:app",
         host=settings.SERVER_HOST,
         port=settings.SERVER_PORT,
         reload=settings.ENV in ["test", "dev"],
